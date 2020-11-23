@@ -1,0 +1,55 @@
+<div class="row">
+
+  <div class="col-md-3 mb-5">
+
+    <div class="card">
+
+      <div class="title-info" *ngIf="pokemon != [] && pokemon != null">
+        <img class="img-pok" [src]="pokemon.sprites.front_default" alt="...">
+        <div class="number-pok"># {{pokemon.id | number:'3.0-0'}}</div>
+        <div class="name-pok"><strong>{{pokemon.name}}</strong></div>
+      </div>
+
+      <div class="card-body">
+
+        <div class="text-center type" *ngIf="pokemon != [] && pokemon != null">
+          <span class="badge" [ngClass]="t.type.name" *ngFor="let t of pokemon.types">
+            {{t.type.name}}
+          </span>
+        </div>
+
+        <div class="stats" *ngIf="pokemon != [] && pokemon != null">
+          <span *ngFor="let s of pokemon.stats">
+            <p><i class="fas " [ngClass]="{
+                          'fa-plus': s.stat.name == 'hp',
+                          'fa-crosshairs': s.stat.name == 'attack',
+                          'fa-shield-alt': s.stat.name == 'defense',
+                          'fa-arrow-up': s.stat.name == 'special-attack',
+                          'fa-dot-circle': s.stat.name == 'special-defense',
+                          'fa-angle-double-right': s.stat.name == 'speed'
+                          }">
+              </i> {{s.stat.name | titlecase}}</p>
+            <p class="number">{{s.base_stat}}</p>
+          </span>
+        </div>
+
+      </div>
+    </div>
+
+
+  </div>
+
+  <div class="col-md-9 mb-5" *ngIf="specie != [] && specie != null">
+
+    <div *ngFor="let sp of specie.genera">
+      <h2 *ngIf="sp.language.name=='es'">{{sp.genus}}</h2>
+    </div>
+
+    <div *ngFor="let t of specie.flavor_text_entries">
+      <p *ngIf="t.language.name=='es'">{{t.flavor_text}}</p>
+    </div>
+
+  </div> 
+
+
+</div>

@@ -1,0 +1,33 @@
+<div class="card" (click)="detalle()">
+
+    <div class="title-info">
+        <img class="img-pok" [src]="pokemon.sprites.front_default" alt="...">
+        <div class="number-pok"># {{pokemon.id | number:'3.0-0'}}</div>
+        <div class="name-pok"><strong>{{pokemon.name}}</strong></div>
+    </div>
+
+    <div class="card-body">
+
+      <div class="text-center type">
+        <span class="badge" [ngClass]="t.type.name" *ngFor="let t of pokemon.types">
+          {{t.type.name}}
+        </span>
+      </div>
+
+      <div class="stats">
+        <span *ngFor="let s of pokemon.stats">
+          <p><i class="fas " [ngClass]="{
+                      'fa-plus': s.stat.name == 'hp',
+                      'fa-crosshairs': s.stat.name == 'attack',
+                      'fa-shield-alt': s.stat.name == 'defense',
+                      'fa-arrow-up': s.stat.name == 'special-attack',
+                      'fa-dot-circle': s.stat.name == 'special-defense',
+                      'fa-angle-double-right': s.stat.name == 'speed'
+                      }">
+            </i> {{s.stat.name | titlecase}}</p>
+          <p class="number">{{s.base_stat}}</p>
+        </span>
+      </div>
+
+    </div>
+  </div>
