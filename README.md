@@ -1,4 +1,15 @@
-# PokeInf
+# PokeWiki 
+
+Este proyecto está hecho en Angular, y presenta la informacion básica de Pokemón consumiendo la API pública [Pokeapi](https://pokeapi.co/).
+
+Puedes ver como quedó aquí: [https://pokewiki-1cda4.web.app/](https://pokewiki-1cda4.web.app/)
+
+Mi twitter: [@AndresGiraldo91](https://twitter.com/AndresGiraldo91)
+
+![home](/src/assets/images/home.PNG)
+
+![detalle](/src/assets/images/detail.PNG)
+
 
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 10.1.2.
 
