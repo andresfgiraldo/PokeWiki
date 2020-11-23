@@ -71,7 +71,6 @@ hr {
     padding: 5px;
 }
 
-
 .badge {
     margin-right: 10px;
 }
@@ -162,4 +161,18 @@ hr {
 
 .water {
     background-color: #67D2F1;
+}
+
+a {
+    color: green;
+    font-weight: normal;
+    font-weight: bold;
+}
+
+a.redes:hover {
+    background-color: yellowgreen;
+}
+
+a.redes:active {
+    color: yellowgreen;
 }
